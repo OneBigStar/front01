@@ -12,20 +12,23 @@
     width: 200px;
     margin-bottom: 20px;
 }
+
 .detail-info{
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     margin: 6px 0;
     color: #333;
 }
+
 .detail-price{
-    font-size: 17px;
+    font-size: 20px;
     font-weight: bold;
     color: #750404;
 }
+
 .detail-description{
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
-    color: #645555;
+    color: #666;
     text-align: left;
 }

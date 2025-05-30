@@ -8,14 +8,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1200px;;
     margin: 0px auto;
     padding: 0px 20px;
 }
-
 .header-left,
 .header-center,
-.header-right{
+.header-right {
     display: flex;
     align-items: center;
 }
@@ -25,22 +24,22 @@
 .header-center{
     flex: 2;
     justify-content: center;
-    gap: 30px;
+    gap:30px;
 }
 .header-right{
     flex: 1;
     justify-content: end;
-    gap: 30px;
+    gap:30px;
 }
 .logo-link{
     display: flex;
     align-items: center;
 }
-
 .logo-image{
-    height: 20px;
+    height: 30px;
+
 }
-.header a{
+.header a {
     text-decoration: none;
-    color: blueviolet
+    color: rgb(118, 75, 228);
 }
