@@ -22,6 +22,17 @@ export default function Header(){
     // 로그아웃 처리
      const handleLogout = () => {
         zu_logout(); // Zustand 
+
+        // 로컬 스토리지 제거
+        localStorage.removeItem("snsProvider");
+        
+        // 쿠키 삭제
+        document.cookie= "snsProvider=; path=/; max-age=0;";
+        document.cookie= "authToken=; path=/; max-age=0;";
+        
+        // 초기화
+        useAuthStore.getState().zu_logout();
+
         navigate("/");
      }
   
