@@ -17,34 +17,24 @@ export default function Login(){
     const navigate = useNavigate();
 
     // Axios로 SpringBoot 서버에 POST로 요청
-    const handleLogin = async()=>{
+    const handleLogin = async () => {
         try {
-            const response = await login(m_id, m_pw) ;
-            // const m_idx = response.data.data.m_idx;
-            // const m_name = response.data.data.m_name;
-            console.log(response);
-            const {accessToken, refreshToken} = response.data.data ;
+            const response = await login(m_id, m_pw);
+            const resData = response.data;
 
-            // localStorage 저장하기, 토큰만 저장
-            localStorage.setItem("tokens", JSON.stringify({accessToken, refreshToken }));
-            
-            // 로그인 성공화면 home 으로 이동 
-            // 단 이동 전에 로그인 성공했다고 기억해야 된다.(localStorage에)
-            // localStorage.setItem("m_idx",m_idx);
-            // localStorage.setItem("name",m_name);
-            // App.js 에서 isLoggedIn를 변경하지 위해 
-            // main으로 갈때 값을 기억시켜야 한다.
-            
-            // setIsLoggedIn(true);
-
+            if (resData.success && resData.data) {
+            const { accessToken, refreshToken } = resData.data;
+            localStorage.setItem("tokens", JSON.stringify({ accessToken, refreshToken }));
             zu_login();
             navigate('/');
-
+            } else {
+            alert(resData.message || "로그인 실패");
+            }
         } catch (error) {
-            console.log(error);
-            alert("로그인 실패");
+            console.log("Axios 에러:", error);
+            alert("서버 또는 네트워크 에러");
         }
-    }
+    };
     return(
         <div className="login-wrapper">
             <h2>로그인</h2>
