@@ -56,7 +56,7 @@ export default function Signup(){
     }
 
     const heandleSocialLogin = (provider) => {
-        window.location.href = `http://localhost:8080/oauth2/authorization/${provider}`;
+        window.location.href = `http://http://43.201.77.4:8080/oauth2/authorization/${provider}`;
     }
 
     return(
